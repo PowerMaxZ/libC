@@ -1,6 +1,5 @@
 #include "libmx.h"
 
-
 char *mx_strtrim(const char *str) {
     if (!str) {
         return NULL;

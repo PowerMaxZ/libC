@@ -1,7 +1,7 @@
-NAMEA = libmx.a
+NAME = libmx.a
 
 INC = libmx.h
-INCI = inc/libmx.h
+INCF = inc/libmx.h
 
 SRC = \
 mx_binary_search.c \
@@ -61,7 +61,7 @@ mx_push_front.c \
 mx_list_size.c \
 mx_sort_list.c
 
-SRCS = \
+SRCF = \
 src/mx_binary_search.c \
 src/mx_bubble_sort.c \
 src/mx_count_substr.c \
@@ -181,14 +181,14 @@ CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
 all: install clean
 install:
-	@cp $(SRCS) .
-	@cp $(INCI) .
+	@cp $(SRCF) .
+	@cp $(INCF) .
 	@clang $(CFLAGS) -c $(SRC) -I $(INC)
-	@ar rcs $(NAMEA) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 	@mkdir obj
 	@mv $(OBJ) ./obj
 uninstall:
-	@rm -rf $(NAMEA)
+	@rm -rf $(NAME)
 	@rm -rf ./obj
 clean:
 	@rm $(INC)
