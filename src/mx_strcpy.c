@@ -1,13 +1,13 @@
 #include "libmx.h"
 
 char *mx_strcpy(char *dst, const char *src) {
-    if (dst == NULL)
-        return NULL;
-    char *res = dst;
-    while (*src != '\0') {
+    char *save = dst;
+
+    while (*src) {
         *dst = *src;
-        dst++;
         src++;
+        dst++;
     }
-    return res;
+    *dst = *src;
+    return save;
 }

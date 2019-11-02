@@ -2,7 +2,7 @@
 
 int mx_count_words(const char *str, char c) {
     if (str == NULL || !*str)
-        return 0;
+        return -1;
     const char *tmp = str;
     int count = 0;
     while (*tmp != '\0') {

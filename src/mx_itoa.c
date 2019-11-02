@@ -16,6 +16,13 @@ char *mx_itoa(int number) {
     char *result = (char *)malloc(size + 1);
     int end = size;
     size--;
+    if (number == -2147483648) {
+        result[0] = '-';
+        result[1] = '2';
+        number += 2000000000;
+        number *= -1;
+        flag = 1;
+    }
     while (number != 0) {
         int temp = number % 10;
         result[size] = temp + 48;

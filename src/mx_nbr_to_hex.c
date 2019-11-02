@@ -2,7 +2,7 @@
 
 char *mx_nbr_to_hex(unsigned long nbr) {
     int k = 0;
-    int tmp = nbr;
+    unsigned long tmp = nbr;
     while (tmp != 0) {
         tmp /= 16;
         k++;

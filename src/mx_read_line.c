@@ -2,8 +2,8 @@
 
 int mx_read_line(char **lineptr, int buf_size, char delim, const int fd) {
     if (fd < 0) return -1;
-    if (buf_size == 0) return 0;
     *lineptr = mx_strnew(buf_size);
+    if (buf_size == 0) return 0;
     char buf = '\0';
     int k = 0;
     int i = 0;
